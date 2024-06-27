@@ -8,8 +8,8 @@ import {ProfileScreen} from '../screens/main/ProfileScreen';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {StyleSheet} from 'react-native';
 import {colors} from '../theme/constants';
-import authStore from '../stores/authStore';
 import {Loading} from '../theme/infoMessages';
+import authStore from '../stores/authStore';
 
 export type RootStackParamList = {
   LogIn: undefined;
