@@ -1,7 +1,6 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {UserInfoCard} from '../../components/UserInfoCard';
-import {useUserProfileImageFetch} from '../../utils/useUserProfileImageFetch';
 import {Error} from '../../theme/infoMessages';
 import {colors} from '../../theme/constants';
 import {CustomButton} from '../../components/CustomButton';
@@ -10,6 +9,7 @@ import authStore from '../../stores/authStore';
 import {useNavigation} from '@react-navigation/native';
 import {TabStackParamList} from '../../components/Navigation';
 import {StackNavigationProp} from '@react-navigation/stack';
+import {useUserProfileImageFetch} from '../../hooks/useUserProfileImageFetch';
 
 export const ProfileScreen = observer(() => {
   const {response, isError} = useUserProfileImageFetch('2');

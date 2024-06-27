@@ -7,9 +7,10 @@ import {
 } from 'react-native';
 import React, {useCallback, useState} from 'react';
 import {ImageItem} from '../../components/ImageItem';
-import {useDataImageItemFetch} from '../../utils/useDataImageItemFetch';
+
 import {Error} from '../../theme/infoMessages';
 import {colors} from '../../theme/constants';
+import {useDataImageItemFetch} from '../../hooks/useDataImageItemFetch';
 
 export const FeedScreen = () => {
   const [page, setPage] = useState(1);
