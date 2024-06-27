@@ -24,6 +24,22 @@ export type TabStackParamList = {
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialTopTabNavigator();
 
+const MainStack = () => {
+  return (
+    <SafeAreaView style={styles.topNavigatorWrapper} edges={['top']}>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarActiveTintColor: colors.white,
+          tabBarLabelStyle: {fontSize: 15},
+          tabBarStyle: {backgroundColor: colors.mainPurple},
+        }}>
+        <Tab.Screen name="Feed" component={FeedScreen} />
+        <Tab.Screen name="Profile" component={ProfileScreen} />
+      </Tab.Navigator>
+    </SafeAreaView>
+  );
+};
+
 export const Navigation = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -39,22 +55,6 @@ export const Navigation = () => {
   if (isLoading) {
     return <Loading />;
   }
-
-  const MainStack = () => {
-    return (
-      <SafeAreaView style={styles.topNavigatorWrapper} edges={['top']}>
-        <Tab.Navigator
-          screenOptions={{
-            tabBarActiveTintColor: colors.white,
-            tabBarLabelStyle: {fontSize: 15},
-            tabBarStyle: {backgroundColor: colors.mainPurple},
-          }}>
-          <Tab.Screen name="Feed" component={FeedScreen} />
-          <Tab.Screen name="Profile" component={ProfileScreen} />
-        </Tab.Navigator>
-      </SafeAreaView>
-    );
-  };
 
   return (
     <NavigationContainer>

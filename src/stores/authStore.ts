@@ -15,8 +15,10 @@ class AuthStore {
   async loadAuthData() {
     try {
       const token = await AsyncStorage.getItem('authToken');
-      if (token) {
+      const storedEmail = await AsyncStorage.getItem('email');
+      if (token && storedEmail) {
         this.isAuthenticated = true;
+        this.email = storedEmail;
       }
     } catch (error) {
       console.error('Failed to load auth data', error);
@@ -30,7 +32,9 @@ class AuthStore {
     if (this.isValidationCorrect) {
       this.isAuthenticated = true;
     }
+
     await AsyncStorage.setItem('authToken', `${uuidv4}`);
+    await AsyncStorage.setItem('email', this.email);
   }
 
   async logout() {
@@ -39,6 +43,7 @@ class AuthStore {
     this.isAuthenticated = false;
     this.isValidationCorrect = false;
     await AsyncStorage.removeItem('authToken');
+    await AsyncStorage.removeItem('email');
   }
 }
 
