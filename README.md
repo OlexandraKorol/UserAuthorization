@@ -18,13 +18,13 @@ The app provides users with the ability to register, view a gallery, and manage 
 ## Step 0: Clone the project repository to your local machine using the following command:
 
    ```
-   git@github.com:OlexandraKorol/RNAuthorization.git
+   https://github.com/OlexandraKorol/UserAuthorization.git
    ```
 
    or
 
    ```
-   https://github.com/OlexandraKorol/RNAuthorization.git
+   git@github.com:OlexandraKorol/UserAuthorization.git
    ```
 
 ## Step 1: Start the Metro Server
@@ -39,7 +39,7 @@ yarn start
 
 ## Step 2: Start Application
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start _Android_ or _iOS_ app:
 
 ### For Android
 
